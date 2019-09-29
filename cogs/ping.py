@@ -16,7 +16,8 @@ class PingCommand(commands.Cog):
             {"name" : "Bot latency", "value" : f"{round(self.bot.latency *1000)}ms", "inline" : False},
             {"name" : "Python version", "value": f"Python {ver}"},
             {"name" : "Libarary", "value" : f"Discord.py {discord.__version__}", "inline" : False},
-            {"name" : "Uptime", "value" : str(td(seconds=int(round(time.time() - self.start_time))))}
+            {"name" : "Uptime", "value" : str(td(seconds=int(round(time.time() - self.start_time))))},
+            {"name" : "Source Code", "value" : f"[Github Repo](https://github.com/Niteblock/techwithtim)\n*Coded by Nite, and members of tech with tim staff*"}
         ]
         await ctx.em("Bot information!", "Here you can see info about the bot:", fields=fields)
 
