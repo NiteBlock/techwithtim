@@ -5,6 +5,9 @@ prefixes = ("t!")
 with open("token.txt", "r") as f:
     token = f.read()
 
+database_login = open("db_login.txt", "r").read()
+database_name = "twt"
+
 embed = {
     "colour" : 0xB7D535,
     "footer" : {

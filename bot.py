@@ -3,7 +3,7 @@ import config
 from discord.ext.commands import when_mentioned_or
 from pathlib import Path
 import sys
-bot = Bot(when_mentioned_or(config.prefixes))
+bot = Bot(config.prefixes)
 
 def format_cog(path):
     replacements = (('/', '.'), ('\\', '.'), ('.py', ''))
