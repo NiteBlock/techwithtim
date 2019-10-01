@@ -5,12 +5,15 @@ from utils.embeds import em
 class Moderation(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-        self.__name__ = "Moderation Commands"
-        self.__description__ = "Commands that only admins can do!"
+        self.help_cmd = {
+            "name" : "Moderation Commands",
+            "description" : "Commands only staff can use.",
+            "emoji" : "🛠"
+        }
 
     @commands.command()
     @commands.has_permissions(ban_members=True)
-    async def ban(self, ctx, user:discord.Member, reason:str="No given reason!"):
+    async def ban(self, ctx, user:discord.Member, *, reason:str="No given reason!"):
         try:
             await user.send(embed=em(f"{ctx.author.name} has banned you from {ctx.guild.name} with the reason '{reason}''", f"{user.name}, You have been banned!"))
         except: pass
@@ -19,7 +22,7 @@ class Moderation(commands.Cog):
     
     @commands.command()
     @commands.has_permissions(kick_members=True)
-    async def kick(self, ctx, user:discord.Member, reason:str="No given reason!"):
+    async def kick(self, ctx, user:discord.Member, *, reason:str="No given reason!"):
         try:
             await user.send(embed=em(f"{ctx.author.name} has kicked you from {ctx.guild.name} with the reason '{reason}''", f"{user.name}, You have been kicked!"))
         except: pass

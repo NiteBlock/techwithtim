@@ -8,6 +8,11 @@ class PingCommand(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self.start_time = time.time()
+        self.help_cmd = {
+            "name" : "Information Commands",
+            "description" : "Commands that show info about the bot!",
+            "emoji" : "ℹ"
+        }
 
     @commands.command(aliases=["version", "uptime", "lib", "bot"])
     async def ping(self, ctx):

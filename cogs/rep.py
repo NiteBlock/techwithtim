@@ -8,6 +8,11 @@ from utils.embeds import em
 class Rep(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
+        self.help_cmd = {
+            "name" : "Rep Commands",
+            "description" : "Commands related to the rep command!",
+            "emoji" : "🤝"
+        }
     
     async def add_rep(self, id, from_id, reason):
         letters = [le for le in string.ascii_lowercase]

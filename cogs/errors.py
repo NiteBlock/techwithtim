@@ -3,9 +3,10 @@ import discord
 
 
 
-class errorCatching(commands.Cog):
+class ErrorCatching(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
+        self.help_cmd = None
 
 
     @commands.Cog.listener()
@@ -34,4 +35,4 @@ class errorCatching(commands.Cog):
             **Please contact staff if you think this is an error.**""", color=discord.Color.red())
 
 def setup(bot):
-    bot.add_cog(errorCatching(bot))
+    bot.add_cog(ErrorCatching(bot))

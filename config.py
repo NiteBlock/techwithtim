@@ -1,12 +1,19 @@
 import discord
 
 prefixes = ("t!")
+import json
+with open("secret.json", "r") as f:
+    secerts = json.loads(f.read())
+token = secerts["token"]
 
-with open("token.txt", "r") as f:
-    token = f.read()
-
-database_login = open("db_login.txt", "r").read()
+database_login = secerts["db_login"]
 database_name = "twt"
+
+youtube_api_key = secerts["youtube_api_key"]
+
+yt_channel_id = "UC4JX40jDee_tINbkjycV4Sg"
+
+poll_channel = 628295950099808297
 
 embed = {
     "colour" : 0xB7D535,
